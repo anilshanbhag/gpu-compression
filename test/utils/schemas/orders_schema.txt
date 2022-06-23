@@ -1,0 +1,9 @@
+o_orderkey, integer
+o_custkey, integer
+o_orderstatus, string
+o_totalprice, double
+o_orderdate, date
+o_orderpriority, string
+o_clerk, string
+o_shippriority, integer
+o_comment, string

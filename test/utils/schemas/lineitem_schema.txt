@@ -1,0 +1,16 @@
+l_orderkey, Integer
+l_partkey, Integer
+l_suppkey, Integer
+l_linenumber, Integer
+l_quantity, Double
+l_extendedprice, Double
+l_discount, Double
+l_tax, Double
+l_returnflag, String
+l_linestatus, String
+l_shipdate, Date
+l_commitdate, Date
+l_receiptdate, Date
+l_shipinstruct, String
+l_shipmode, String
+l_comment, String

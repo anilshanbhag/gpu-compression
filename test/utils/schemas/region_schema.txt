@@ -1,0 +1,3 @@
+r_regionkey, integer
+r_name, string
+r_comment, string

@@ -1,0 +1,4 @@
+n_nationkey, integer
+n_name, string
+n_regionkey, integer
+n_comment, string
