@@ -5,7 +5,7 @@ A key constraint of GPU-based data analytics today is the limited memory capacit
 * Fitting more data into GPU memory  
 * Speeding up data transfer between CPU and GPU.
 
-This package implements three bit-packing-based optimized data compression formats and their decompression routines for GPUs: GPU-FOR, GPU-DFOR and GPU-RFOR. The work was presented at SIGMOD '22. Please read the [paper](https://dl.acm.org/doi/abs/10.1145/3514221.3526132) for more details. 
+This package implements three bit-packing-based optimized data compression formats and their decompression routines for GPUs: GPU-FOR, GPU-DFOR, and GPU-RFOR. The work was presented at SIGMOD '22. Please read the [paper](https://dl.acm.org/doi/abs/10.1145/3514221.3526132) for more details. 
 
 ```
 @inproceedings{gpubitpacking,
@@ -29,7 +29,7 @@ This package implements three bit-packing-based optimized data compression forma
 Usage
 ---
 
-The decompression routines are implemented as device functions. Use the routine `LoadBinPack` / `LoadDBinPack` in place of a `BlockLoad` routine and point it to the appropriate compressed column. As these are device functions, you can directly use it in your own program too.
+The decompression routines are implemented as device functions. Use the routine `LoadBinPack` / `LoadDBinPack` / 'LoadRBinPack' in place of a `BlockLoad` routine and point it to the appropriate compressed column. As these are device functions, you can directly use it in your own program too.
 
 **To generate the test distributions:**
 
@@ -44,7 +44,7 @@ make bench/gen bench/gen_d1 bench/gen_d2
 
 * For `d3`, run the bench/gen_d3.py file
 
-Note these will writen out the DATA_DIR defined in `ssb/ssb_utils.h` as flat files.
+Note these will written out the DATA_DIR defined in `ssb/ssb_utils.h` as flat files.
 
 **To generate Star Schema Benchmark data:**
 
@@ -58,22 +58,21 @@ The above two steps will generate flat files which contain 4-byte integer arrays
 # For test distributions
 make bench/binpack
 make bench/deltabinpack
+make bench/rlebinpack
 
 ./bin/bench/binpack <num_bits>
 ./bin/bench/deltabinpack <num_bits>
+./bin/bench/rlebinpack <num_bits>
 
 # For SSB columns
 make ssb/binpack
 make ssb/deltabinpack
+make ssb/rlebinpack
 
 ./bin/ssb/binpack <col_name>
 ./bin/ssb/deltabinpack <col_name>
+./bin/ssb/rlebinpack <col_name>
 ```
 
 You can find test SSB implementations [here](https://github.com/anilshanbhag/crystal/tree/master/src/ssb)
-Replace the `BlockLoad` routine with `LoadBinPack` / `LoadDBinPack`.
-
-TODO
----
-
-`GPU-RFOR` source code coming soon.
+Replace the `BlockLoad` routine with `LoadBinPack` / `LoadDBinPack` / 'LoadRBinPack'.
