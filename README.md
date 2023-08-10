@@ -29,7 +29,7 @@ This package implements three bit-packing-based optimized data compression forma
 Usage
 ---
 
-The decompression routines are implemented as device functions. Use the routine `LoadBinPack` / `LoadDBinPack` / 'LoadRBinPack' in place of a `BlockLoad` routine and point it to the appropriate compressed column. As these are device functions, you can directly use it in your own program too.
+The decompression routines are implemented as device functions. Use the routine `LoadBinPack` / `LoadDBinPack` / `LoadRBinPack` in place of a `BlockLoad` routine and point it to the appropriate compressed column. As these are device functions, you can directly use them in your own program too.
 
 **To generate the test distributions:**
 
@@ -75,4 +75,4 @@ make ssb/rlebinpack
 ```
 
 You can find test SSB implementations [here](https://github.com/anilshanbhag/crystal/tree/master/src/ssb)
-Replace the `BlockLoad` routine with `LoadBinPack` / `LoadDBinPack` / 'LoadRBinPack'.
+Replace the `BlockLoad` routine with `LoadBinPack` / `LoadDBinPack` / `LoadRBinPack`.
